@@ -16,6 +16,13 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               Premium studio apartments in the heart of Ayodhya's spiritual and commercial development zone.
             </p>
+            <div className="text-gray-300 space-y-2 mb-4">
+              <p><strong className="text-golden-300">Ayana Proptech LLP</strong></p>
+              <p>97, Kahlon Garden City, Sec 12, Vrindavan Yojna</p>
+              <p>Lucknow - 226025, UP, India</p>
+              <p>📞 Mobile & WhatsApp: +91 7570000985</p>
+              <p>📧 Email: hello@ayanaprop.com</p>
+            </div>
             <p className="text-golden-300 font-semibold">🙏 Jai Shree Ram! 🙏</p>
           </div>
           
@@ -52,6 +59,22 @@ const Footer = () => {
                   className="hover:text-golden-300 transition-colors cursor-pointer"
                 >
                   Pricing Information
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('news')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Ayodhya in the News
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('government')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Development Authorities
                 </button>
               </li>
               <li>

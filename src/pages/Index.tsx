@@ -4,10 +4,13 @@ import Features from "@/components/Features";
 import Statistics from "@/components/Statistics";
 import Location from "@/components/Location";
 import Amenities from "@/components/Amenities";
+import NewsSection from "@/components/NewsSection";
+import GovernmentSection from "@/components/GovernmentSection";
 import PricingTable from "@/components/PricingTable";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import PopupContact from "@/components/PopupContact";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -17,10 +20,13 @@ const Index = () => {
       <Statistics />
       <Location />
       <Amenities />
+      <NewsSection />
+      <GovernmentSection />
       <PricingTable />
       <ContactForm />
       <Footer />
       <PopupContact />
+      <WhatsAppButton />
     </div>
   );
 };

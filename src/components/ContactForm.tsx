@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, Download } from "lucide-react";
+import { Phone, Mail, Download, MapPin } from "lucide-react";
 import { submitToGoogleSheets } from "@/services/googleSheets";
 
 const ContactForm = () => {
@@ -84,7 +84,6 @@ const ContactForm = () => {
   };
 
   const downloadBrochure = () => {
-    // Create a link to download the brochure
     const link = document.createElement('a');
     link.href = '/AyodhyaBrochure.pdf';
     link.download = 'AyodhyaBrochure.pdf';
@@ -93,7 +92,6 @@ const ContactForm = () => {
   };
 
   const downloadPricingTable = () => {
-    // Create a link to download the pricing table
     const link = document.createElement('a');
     link.href = '/Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
     link.download = 'Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
@@ -122,13 +120,27 @@ const ContactForm = () => {
                   <CardTitle className="text-2xl">Contact Information</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6 space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-golden-500 rounded-full p-3">
+                      <MapPin className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Address</h3>
+                      <p className="text-gray-600">
+                        Ayana Proptech LLP<br />
+                        97, Kahlon Garden City, Sec 12, Vrindavan Yojna<br />
+                        Lucknow - 226025, UP, India
+                      </p>
+                    </div>
+                  </div>
+
                   <div className="flex items-center space-x-4">
                     <div className="bg-golden-500 rounded-full p-3">
                       <Phone className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Phone</h3>
-                      <p className="text-gray-600">+91-7570000985</p>
+                      <h3 className="font-semibold text-gray-900">Mobile & WhatsApp</h3>
+                      <p className="text-gray-600">+91 7570000985</p>
                     </div>
                   </div>
                   
