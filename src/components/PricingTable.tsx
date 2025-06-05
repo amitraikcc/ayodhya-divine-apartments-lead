@@ -44,7 +44,7 @@ const PricingTable = () => {
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-golden-600 mb-2">₹20 Cr</div>
+                  <div className="text-4xl font-bold text-golden-600 mb-2">₹10 Cr</div>
                   <div className="text-gray-600">Annual Tourists by 2031</div>
                 </div>
                 <div className="text-center">
@@ -97,7 +97,7 @@ const PricingTable = () => {
                   </Button>
                 </div>
                 <div className="text-gray-600 mt-4">
-                  <strong>Contact:</strong> Ajit Rai | +91-7570000985 | ayanaproptechllp@gmail.com
+                  <strong>Contact:</strong> Ajit Rai | +91-7570000985 | hello@ayanaprop.com
                 </div>
               </div>
             </CardContent>

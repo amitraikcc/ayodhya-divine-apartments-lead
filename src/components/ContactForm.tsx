@@ -115,7 +115,7 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="border-golden-200 shadow-lg">
+              <Card className="border-golden-200 shadow-lg h-full">
                 <CardHeader className="bg-gradient-to-r from-golden-500 to-orange-500 text-white">
                   <CardTitle className="text-2xl">Contact Information</CardTitle>
                 </CardHeader>
@@ -179,31 +179,23 @@ const ContactForm = () => {
                   </div>
                 </CardContent>
               </Card>
-
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/0893d1cf-499b-4378-90a8-6687e08b301c.png" 
-                  alt="Ayodhya Development" 
-                  className="rounded-2xl shadow-xl"
-                />
-              </div>
             </div>
 
             {/* Contact Form */}
-            <Card className="border-golden-200 shadow-xl">
+            <Card className="border-golden-200 shadow-xl h-full">
               <CardHeader className="bg-gradient-to-r from-golden-500 to-orange-500 text-white">
                 <CardTitle className="text-2xl">Request Information</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
-                    <Label htmlFor="name" className="text-gray-700 font-medium">Full Name *</Label>
+                    <Label htmlFor="name" className="text-gray-700 font-medium text-lg">Full Name *</Label>
                     <Input
                       id="name"
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="mt-2 border-golden-200 focus:border-golden-500"
+                      className="mt-3 border-golden-200 focus:border-golden-500 h-12 text-lg"
                       placeholder="Enter your full name"
                       required
                       disabled={isSubmitting}
@@ -211,14 +203,14 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <Label className="text-gray-700 font-medium">Phone Number *</Label>
-                    <div className="flex space-x-2 mt-2">
+                    <Label className="text-gray-700 font-medium text-lg">Phone Number *</Label>
+                    <div className="flex space-x-2 mt-3">
                       <Select 
                         value={formData.countryCode} 
                         onValueChange={(value) => setFormData({ ...formData, countryCode: value })}
                         disabled={isSubmitting}
                       >
-                        <SelectTrigger className="w-32 border-golden-200 focus:border-golden-500">
+                        <SelectTrigger className="w-36 border-golden-200 focus:border-golden-500 h-12">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -233,7 +225,7 @@ const ContactForm = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="flex-1 border-golden-200 focus:border-golden-500"
+                        className="flex-1 border-golden-200 focus:border-golden-500 h-12 text-lg"
                         placeholder="Phone number"
                         required
                         disabled={isSubmitting}
@@ -242,13 +234,13 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-gray-700 font-medium">Email Address *</Label>
+                    <Label htmlFor="email" className="text-gray-700 font-medium text-lg">Email Address *</Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="mt-2 border-golden-200 focus:border-golden-500"
+                      className="mt-3 border-golden-200 focus:border-golden-500 h-12 text-lg"
                       placeholder="Enter your email address"
                       required
                       disabled={isSubmitting}
@@ -257,7 +249,7 @@ const ContactForm = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-golden-500 hover:bg-golden-600 text-white font-semibold py-3 text-lg"
+                    className="w-full bg-golden-500 hover:bg-golden-600 text-white font-semibold py-4 text-xl h-14"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
