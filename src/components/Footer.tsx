@@ -70,7 +70,7 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <p><strong>Contact Person:</strong> Ajit Rai</p>
               <p><strong>Phone:</strong> +91-7570000985</p>
-              <p><strong>Email:</strong> ayanaproptechllp@gmail.com</p>
+              <p><strong>Email:</strong> hello@ayanaprop.com</p>
               <p><strong>Location:</strong> Surajkund Area, Ayodhya</p>
             </div>
           </div>

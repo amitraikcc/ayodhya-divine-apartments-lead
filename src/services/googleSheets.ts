@@ -10,8 +10,9 @@ interface LeadData {
 
 export const submitToGoogleSheets = async (leadData: LeadData): Promise<boolean> => {
   try {
-    // Google Apps Script Web App URL - you'll need to create this
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    // Google Apps Script Web App URL for your specific sheet
+    // You'll need to replace this with your actual deployed script URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/exec';
     
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
@@ -19,11 +20,17 @@ export const submitToGoogleSheets = async (leadData: LeadData): Promise<boolean>
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(leadData)
+      body: JSON.stringify({
+        name: leadData.name,
+        countryCode: leadData.countryCode,
+        phone: leadData.phone,
+        email: leadData.email,
+        timestamp: leadData.timestamp,
+        source: leadData.source,
+        spreadsheetId: '1dGsIZ_pOpxXTWEFqfTO5SmJbDBlzRNGABng3BQEgF8A'
+      })
     });
 
-    // Since we're using no-cors, we can't read the response
-    // We'll assume success if no error is thrown
     console.log('Lead submitted to Google Sheets:', leadData);
     return true;
   } catch (error) {
@@ -32,10 +39,10 @@ export const submitToGoogleSheets = async (leadData: LeadData): Promise<boolean>
   }
 };
 
-// Alternative method using Google Forms
+// Alternative method using Google Forms if you prefer
 export const submitToGoogleForm = async (leadData: LeadData): Promise<boolean> => {
   try {
-    // Replace with your Google Form URL and field IDs
+    // You can create a Google Form that feeds into your sheet and use this method instead
     const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
     
     const formData = new FormData();
@@ -43,6 +50,7 @@ export const submitToGoogleForm = async (leadData: LeadData): Promise<boolean> =
     formData.append('entry.PHONE_FIELD_ID', `${leadData.countryCode}${leadData.phone}`);
     formData.append('entry.EMAIL_FIELD_ID', leadData.email);
     formData.append('entry.SOURCE_FIELD_ID', leadData.source);
+    formData.append('entry.TIMESTAMP_FIELD_ID', leadData.timestamp);
     
     await fetch(GOOGLE_FORM_URL, {
       method: 'POST',
