@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download } from "lucide-react";
@@ -41,7 +42,7 @@ const PricingTable = () => {
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-golden-600 mb-2">₹10 Cr</div>
+                  <div className="text-4xl font-bold text-golden-600 mb-2">10 Cr</div>
                   <div className="text-gray-600">Annual Tourists by 2031</div>
                 </div>
                 <div className="text-center">

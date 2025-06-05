@@ -32,23 +32,24 @@ const Location = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <div className="relative h-full min-h-[600px]">
             <img 
               src="/lovable-uploads/d5a837c0-c82a-4b40-b6e0-2b34207a7180.png" 
               alt="Ayodhya Temple View" 
-              className="rounded-2xl shadow-2xl"
+              className="w-full h-full object-cover rounded-2xl shadow-2xl"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
           </div>
 
-          <div className="space-y-8">
+          <div className="flex flex-col justify-center space-y-6">
             {locationFeatures.map((feature, index) => (
               <div 
                 key={index} 
-                className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg animate-fade-in"
+                className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="bg-golden-500 rounded-full p-3">
+                <div className="bg-golden-500 rounded-full p-3 flex-shrink-0">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -58,8 +59,8 @@ const Location = () => {
               </div>
             ))}
 
-            <div className="bg-gradient-to-r from-golden-500 to-orange-500 p-6 rounded-xl text-white">
-              <h3 className="text-2xl font-bold mb-2">Government Backed Development</h3>
+            <div className="bg-gradient-to-r from-golden-500 to-orange-500 p-6 rounded-xl text-white mt-6">
+              <h3 className="text-2xl font-bold mb-3">Government Backed Development</h3>
               <ul className="space-y-2 text-golden-100">
                 <li>• 4-Lane & 6-Lane National Highways</li>
                 <li>• New Railway Station Development</li>

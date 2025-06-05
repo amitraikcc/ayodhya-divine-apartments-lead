@@ -4,32 +4,44 @@ const Statistics = () => {
     {
       number: "₹85,000 Cr+",
       label: "Infrastructure Investment by Government",
-      color: "text-golden-600"
+      color: "text-purple-600",
+      bgColor: "bg-purple-100",
+      emoji: "🏗️"
     },
     {
       number: "10 Crore+",
       label: "Projected Annual Pilgrims",
-      color: "text-orange-600"
+      color: "text-blue-600",
+      bgColor: "bg-blue-100",
+      emoji: "🕉️"
     },
     {
       number: "590",
       label: "Available Hotel Rooms Only",
-      color: "text-red-600"
+      color: "text-red-600",
+      bgColor: "bg-red-100",
+      emoji: "🏨"
     },
     {
       number: "1,200 Acre",
       label: "Mega Township Development",
-      color: "text-golden-600"
+      color: "text-green-600",
+      bgColor: "bg-green-100",
+      emoji: "🏘️"
     },
     {
       number: "4X-10X",
       label: "Growth from 2021-24",
-      color: "text-green-600"
+      color: "text-orange-600",
+      bgColor: "bg-orange-100",
+      emoji: "📈"
     },
     {
       number: "12X-20X",
       label: "Expected Growth 2025-35",
-      color: "text-orange-600"
+      color: "text-pink-600",
+      bgColor: "bg-pink-100",
+      emoji: "🚀"
     }
   ];
 
@@ -47,7 +59,7 @@ const Statistics = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Current Market <span className="text-golden-600">Statistics</span>
+            Current Market <span className="text-golden-600">Statistics</span> 📊
           </h2>
           <p className="text-xl text-gray-600">
             Data-driven insights showcasing Ayodhya's unprecedented growth potential
@@ -58,13 +70,14 @@ const Statistics = () => {
           {stats.map((stat, index) => (
             <div 
               key={index} 
-              className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in border border-golden-100"
+              className={`text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in border-2 ${stat.bgColor} border-opacity-30 hover:scale-105`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`text-4xl md:text-5xl font-bold mb-4 ${stat.color}`}>
+              <div className="text-5xl mb-4">{stat.emoji}</div>
+              <div className={`text-4xl md:text-5xl font-black mb-4 ${stat.color}`}>
                 {stat.number}
               </div>
-              <p className="text-gray-600 font-medium text-lg">{stat.label}</p>
+              <p className="text-gray-700 font-semibold text-lg leading-tight">{stat.label}</p>
             </div>
           ))}
         </div>
