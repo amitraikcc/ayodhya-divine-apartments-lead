@@ -29,22 +29,43 @@ const PopupContact = () => {
   }, []);
 
   const countryCodes = [
-    { code: '+1', country: 'US/Canada' },
+    { code: '+1', country: 'US' },
     { code: '+44', country: 'UK' },
     { code: '+91', country: 'India' },
     { code: '+971', country: 'UAE' },
     { code: '+65', country: 'Singapore' },
     { code: '+60', country: 'Malaysia' },
-    { code: '+61', country: 'Australia' }
+    { code: '+61', country: 'Australia' },
+    { code: '+49', country: 'Germany' },
+    { code: '+33', country: 'France' },
+    { code: '+39', country: 'Italy' },
+    { code: '+34', country: 'Spain' },
+    { code: '+81', country: 'Japan' },
+    { code: '+86', country: 'China' },
+    { code: '+82', country: 'South Korea' },
+    { code: '+55', country: 'Brazil' },
+    { code: '+52', country: 'Mexico' },
+    { code: '+7', country: 'Russia' },
+    { code: '+966', country: 'Saudi Arabia' },
+    { code: '+90', country: 'Turkey' },
+    { code: '+62', country: 'Indonesia' },
+    { code: '+66', country: 'Thailand' },
+    { code: '+63', country: 'Philippines' },
+    { code: '+84', country: 'Vietnam' },
+    { code: '+880', country: 'Bangladesh' },
+    { code: '+92', country: 'Pakistan' },
+    { code: '+94', country: 'Sri Lanka' },
+    { code: '+977', country: 'Nepal' },
+    { code: '+975', country: 'Bhutan' }
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.phone || !formData.email) {
+    if (!formData.name || !formData.phone) {
       toast({
-        title: "Please fill all fields",
-        description: "All fields are required to submit the form",
+        title: "Please fill required fields",
+        description: "Name and phone number are required to submit the form",
         variant: "destructive"
       });
       return;
@@ -57,7 +78,7 @@ const PopupContact = () => {
         name: formData.name,
         countryCode: formData.countryCode,
         phone: formData.phone,
-        email: formData.email,
+        email: formData.email || '',
         timestamp: new Date().toISOString(),
         source: 'Popup Form'
       };
@@ -163,7 +184,7 @@ const PopupContact = () => {
             </div>
 
             <div>
-              <Label htmlFor="popup-email" className="text-gray-700 font-medium">Email Address *</Label>
+              <Label htmlFor="popup-email" className="text-gray-700 font-medium">Email Address (Optional)</Label>
               <Input
                 id="popup-email"
                 type="email"
@@ -171,7 +192,6 @@ const PopupContact = () => {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="mt-1 border-golden-200 focus:border-golden-500"
                 placeholder="Enter your email address"
-                required
                 disabled={isSubmitting}
               />
             </div>

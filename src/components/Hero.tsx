@@ -16,6 +16,8 @@ const Hero = () => {
         style={{
           backgroundImage: 'url(/lovable-uploads/0893d1cf-499b-4378-90a8-6687e08b301c.png)',
         }}
+        role="img"
+        aria-label="Ram Mandir view from Divine Apartment balcony with golden temple architecture"
       >
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
@@ -44,6 +46,7 @@ const Hero = () => {
             size="lg" 
             className="bg-golden-500 hover:bg-golden-600 text-black font-semibold px-8 py-4 text-lg"
             onClick={scrollToContact}
+            aria-label="Book Ayodhya apartment investment opportunity"
           >
             Book Now - Auspicious Returns
           </Button>
@@ -51,6 +54,7 @@ const Hero = () => {
             size="lg" 
             variant="outline" 
             className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg"
+            aria-label="Call Ayana Proptech for Ayodhya apartment booking"
           >
             <Phone className="mr-2 h-5 w-5" />
             +91-7570000985
