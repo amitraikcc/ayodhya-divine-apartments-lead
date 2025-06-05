@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -21,6 +20,15 @@ const CookieConsent = () => {
     }
   }, []);
 
+  const updateGtagConsent = (analytics: boolean, marketing: boolean) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: analytics ? 'granted' : 'denied',
+        ad_storage: marketing ? 'granted' : 'denied'
+      });
+    }
+  };
+
   const handleAcceptAll = () => {
     const consent = {
       necessary: true,
@@ -32,12 +40,7 @@ const CookieConsent = () => {
     setShowBanner(false);
     
     // Enable Google Analytics
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'granted',
-        ad_storage: 'granted'
-      });
-    }
+    updateGtagConsent(true, true);
   };
 
   const handleSavePreferences = () => {
@@ -50,12 +53,7 @@ const CookieConsent = () => {
     setShowPreferences(false);
     
     // Update Google Analytics consent
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: preferences.analytics ? 'granted' : 'denied',
-        ad_storage: preferences.marketing ? 'granted' : 'denied'
-      });
-    }
+    updateGtagConsent(preferences.analytics, preferences.marketing);
   };
 
   const handleRejectAll = () => {
@@ -69,12 +67,7 @@ const CookieConsent = () => {
     setShowBanner(false);
     
     // Deny Google Analytics
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'denied',
-        ad_storage: 'denied'
-      });
-    }
+    updateGtagConsent(false, false);
   };
 
   if (!showBanner) return null;
