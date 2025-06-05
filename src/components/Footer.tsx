@@ -1,5 +1,12 @@
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -15,11 +22,46 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Investment Opportunity</li>
-              <li>Location Advantages</li>
-              <li>Amenities & Features</li>
-              <li>Pricing Information</li>
-              <li>Contact Us</li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('features')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Investment Opportunity
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('location')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Location Advantages
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('amenities')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Amenities & Features
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('pricing')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Pricing Information
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="hover:text-golden-300 transition-colors cursor-pointer"
+                >
+                  Contact Us
+                </button>
+              </li>
             </ul>
           </div>
           
@@ -35,7 +77,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Ayodhya Studio Apartments. All rights reserved. | A Divine Investment Opportunity</p>
+          <p>&copy; 2025 Ayodhya Studio Apartments. All rights reserved. | A Divine Investment Opportunity</p>
         </div>
       </div>
     </footer>

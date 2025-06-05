@@ -1,18 +1,29 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Download } from "lucide-react";
 
 const PricingTable = () => {
   const downloadBrochure = () => {
     // Create a sample brochure download
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/4890dd5c-7063-4968-a92b-c0a436130f42.png';
-    link.download = 'Ayodhya-Studio-Apartment-Brochure.png';
+    link.href = '/AyodhyaBrochure.pdf';
+    link.download = 'AyodhyaBrochure.pdf';
+    link.target = '_blank';
+    link.click();
+  };
+
+  const downloadPricingTable = () => {
+    // Create a link to download the pricing table
+    const link = document.createElement('a');
+    link.href = '/Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
+    link.download = 'Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
+    link.target = '_blank';
     link.click();
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-golden-50 to-orange-50">
+    <section id="pricing" className="py-20 bg-gradient-to-br from-golden-50 to-orange-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -68,13 +79,23 @@ const PricingTable = () => {
                 </div>
               </div>
 
-              <div className="text-center">
-                <Button 
-                  onClick={downloadBrochure}
-                  className="bg-golden-500 hover:bg-golden-600 text-white px-8 py-4 text-lg font-semibold mr-4 mb-4"
-                >
-                  Download Detailed Brochure
-                </Button>
+              <div className="text-center space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <Button 
+                    onClick={downloadBrochure}
+                    className="bg-golden-500 hover:bg-golden-600 text-white px-8 py-4 text-lg font-semibold flex items-center justify-center space-x-2"
+                  >
+                    <Download className="h-5 w-5" />
+                    <span>Download Ayodhya Brochure</span>
+                  </Button>
+                  <Button 
+                    onClick={downloadPricingTable}
+                    className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold flex items-center justify-center space-x-2"
+                  >
+                    <Download className="h-5 w-5" />
+                    <span>Download Pricing Table 2025</span>
+                  </Button>
+                </div>
                 <div className="text-gray-600 mt-4">
                   <strong>Contact:</strong> Ajit Rai | +91-7570000985 | ayanaproptechllp@gmail.com
                 </div>

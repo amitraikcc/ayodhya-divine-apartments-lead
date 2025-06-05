@@ -7,9 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { submitToGoogleSheets } from "@/services/googleSheets";
 
 const PopupContact = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     countryCode: '+91',
@@ -36,7 +38,7 @@ const PopupContact = () => {
     { code: '+61', country: 'Australia' }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.phone || !formData.email) {
@@ -48,20 +50,47 @@ const PopupContact = () => {
       return;
     }
 
-    toast({
-      title: "Thank you for your interest!",
-      description: "Our team will contact you within 24 hours with exclusive investment details.",
-    });
+    setIsSubmitting(true);
 
-    console.log('Popup form submitted:', formData);
-    setIsVisible(false);
-    
-    setFormData({
-      name: '',
-      countryCode: '+91',
-      phone: '',
-      email: ''
-    });
+    try {
+      const leadData = {
+        name: formData.name,
+        countryCode: formData.countryCode,
+        phone: formData.phone,
+        email: formData.email,
+        timestamp: new Date().toISOString(),
+        source: 'Popup Form'
+      };
+
+      const success = await submitToGoogleSheets(leadData);
+      
+      if (success) {
+        toast({
+          title: "Thank you for your interest!",
+          description: "Our team will contact you within 24 hours with exclusive investment details.",
+        });
+
+        setIsVisible(false);
+        
+        setFormData({
+          name: '',
+          countryCode: '+91',
+          phone: '',
+          email: ''
+        });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Popup form submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your form. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
@@ -79,6 +108,7 @@ const PopupContact = () => {
             size="sm"
             onClick={handleClose}
             className="absolute right-2 top-2 text-white hover:bg-white/20"
+            disabled={isSubmitting}
           >
             <X className="h-4 w-4" />
           </Button>
@@ -97,6 +127,7 @@ const PopupContact = () => {
                 className="mt-1 border-golden-200 focus:border-golden-500"
                 placeholder="Enter your full name"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -106,6 +137,7 @@ const PopupContact = () => {
                 <Select 
                   value={formData.countryCode} 
                   onValueChange={(value) => setFormData({ ...formData, countryCode: value })}
+                  disabled={isSubmitting}
                 >
                   <SelectTrigger className="w-24 border-golden-200 focus:border-golden-500">
                     <SelectValue />
@@ -125,6 +157,7 @@ const PopupContact = () => {
                   className="flex-1 border-golden-200 focus:border-golden-500"
                   placeholder="Phone number"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
             </div>
@@ -139,14 +172,16 @@ const PopupContact = () => {
                 className="mt-1 border-golden-200 focus:border-golden-500"
                 placeholder="Enter your email address"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
             <Button 
               type="submit" 
               className="w-full bg-golden-500 hover:bg-golden-600 text-white font-semibold py-2"
+              disabled={isSubmitting}
             >
-              Get Exclusive Details Now!
+              {isSubmitting ? 'Submitting...' : 'Get Exclusive Details Now!'}
             </Button>
           </form>
           
