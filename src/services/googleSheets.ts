@@ -12,7 +12,7 @@ export const submitToGoogleSheets = async (leadData: LeadData): Promise<boolean>
   try {
     // Google Apps Script Web App URL for your specific sheet
     // You'll need to replace this with your actual deployed script URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRXXTvsunjTNmAYFFw8aE5RBa0IWqb8OZn48M8Jj3jypHnr3B4I9DA3DlRVcCyvakl/exec';
     
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
