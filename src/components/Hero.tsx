@@ -52,8 +52,7 @@ const Hero = () => {
           </Button>
           <Button 
             size="lg" 
-            variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg"
+            className="bg-white/20 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300"
             aria-label="Call Ayana Proptech for Ayodhya apartment booking"
           >
             <Phone className="mr-2 h-5 w-5" />
