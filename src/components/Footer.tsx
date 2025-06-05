@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -84,6 +86,14 @@ const Footer = () => {
                 >
                   Contact Us
                 </button>
+              </li>
+              <li>
+                <Link 
+                  to="/privacy-policy" 
+                  className="hover:text-golden-300 transition-colors cursor-pointer block"
+                >
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>
