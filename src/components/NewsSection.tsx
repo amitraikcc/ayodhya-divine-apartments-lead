@@ -6,7 +6,7 @@ import { Download, TrendingUp, Users, Building2, MapPin } from "lucide-react";
 const NewsSection = () => {
   const downloadNewsPDF = () => {
     const link = document.createElement('a');
-    link.href = '/pdfs/AyodhyaNews.pdf';
+    link.href = '/lovable-uploads/pdfs/AyodhyaNews.pdf';
     link.download = 'AyodhyaNews.pdf';
     link.target = '_blank';
     link.click();

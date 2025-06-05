@@ -1,22 +1,19 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download } from "lucide-react";
 
 const PricingTable = () => {
   const downloadBrochure = () => {
-    // Create a sample brochure download
     const link = document.createElement('a');
-    link.href = '/AyodhyaBrochure.pdf';
+    link.href = '/lovable-uploads/pdfs/AyodhyaBrochure.pdf';
     link.download = 'AyodhyaBrochure.pdf';
     link.target = '_blank';
     link.click();
   };
 
   const downloadPricingTable = () => {
-    // Create a link to download the pricing table
     const link = document.createElement('a');
-    link.href = '/Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
+    link.href = '/lovable-uploads/pdfs/Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
     link.download = 'Pricing Table - Ayodhya Studio Apartment_2025_06_05.pdf';
     link.target = '_blank';
     link.click();

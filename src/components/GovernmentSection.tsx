@@ -6,7 +6,7 @@ import { Download, CheckCircle, Building, Users, TrendingUp, MapPin } from "luci
 const GovernmentSection = () => {
   const downloadDevelopmentReport = () => {
     const link = document.createElement('a');
-    link.href = '/pdfs/Ayodhya_Development_Report.pdf';
+    link.href = '/lovable-uploads/pdfs/Ayodhya_Development_Report.pdf';
     link.download = 'Ayodhya_Development_Report.pdf';
     link.target = '_blank';
     link.click();
