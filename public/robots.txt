@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ayodhyaapartments.com/sitemap.xml
+Sitemap: https://ayanaprop.tech/sitemap.xml
 
 # Crawl-delay for all bots
 Crawl-delay: 1

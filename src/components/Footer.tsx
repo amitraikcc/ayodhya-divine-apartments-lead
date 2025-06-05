@@ -87,24 +87,47 @@ const Footer = () => {
                   Contact Us
                 </button>
               </li>
-              <li>
-                <Link 
-                  to="/privacy-policy" 
-                  className="hover:text-golden-300 transition-colors cursor-pointer block"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
-            <div className="space-y-2 text-gray-300">
+            <div className="space-y-2 text-gray-300 mb-6">
               <p><strong>Contact Person:</strong> Ajit Rai</p>
               <p><strong>Phone:</strong> +91-7570000985</p>
               <p><strong>Email:</strong> hello@ayanaprop.com</p>
               <p><strong>Location:</strong> Surajkund Area, Ayodhya</p>
+            </div>
+            
+            <div className="space-y-2">
+              <h5 className="text-lg font-semibold text-golden-300">Legal</h5>
+              <ul className="space-y-1 text-gray-300">
+                <li>
+                  <Link 
+                    to="/privacy-policy" 
+                    className="hover:text-golden-300 transition-colors cursor-pointer block"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/terms-and-conditions" 
+                    className="hover:text-golden-300 transition-colors cursor-pointer block"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <a 
+                    href="#" 
+                    className="hover:text-golden-300 transition-colors cursor-pointer block text-sm"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Do Not Sell My Info (CCPA)
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -8,6 +8,10 @@ const Hero = () => {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleCallClick = () => {
+    window.location.href = 'tel:+917570000985';
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -53,6 +57,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="bg-white/20 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold transition-all duration-300"
+            onClick={handleCallClick}
             aria-label="Call Ayana Proptech for Ayodhya apartment booking"
           >
             <Phone className="mr-2 h-5 w-5" />
