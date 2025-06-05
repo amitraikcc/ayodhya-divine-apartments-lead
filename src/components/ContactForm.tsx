@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -113,32 +114,12 @@ const ContactForm = () => {
         }),
       });
 
-      toast({
-        title: "Thank you for your interest!",
-        description: "Our team will contact you within 24 hours.",
-      });
-
-      setFormData({
-        name: "",
-        phone: "",
-        countryCode: "+91",
-        email: "",
-        message: "",
-      });
+      // Redirect to thank-you page
+      navigate('/thank-you');
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your interest. We'll be in touch soon.",
-      });
-      
-      setFormData({
-        name: "",
-        phone: "",
-        countryCode: "+91",
-        email: "",
-        message: "",
-      });
+      // Redirect to thank-you page even on error
+      navigate('/thank-you');
     }
   };
 
