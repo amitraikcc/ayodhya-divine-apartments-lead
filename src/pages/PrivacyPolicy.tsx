@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Mail, Phone, MapPin } from "lucide-react";
@@ -208,7 +207,7 @@ const PrivacyPolicy = () => {
                       <Mail className="h-5 w-5 text-golden-600" />
                       <div>
                         <p className="font-semibold">Email:</p>
-                        <p className="text-gray-700">hello@ayanaprop.com</p>
+                        <p className="text-gray-700">hello@ayanaprop.tech</p>
                       </div>
                     </div>
                     

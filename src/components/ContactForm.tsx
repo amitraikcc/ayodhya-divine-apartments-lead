@@ -174,7 +174,7 @@ const ContactForm = () => {
                 <Mail className="h-6 w-6 text-golden-500 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                  <p className="text-gray-600">hello@ayanaprop.com</p>
+                  <p className="text-gray-600">hello@ayanaprop.tech</p>
                 </div>
               </div>
 

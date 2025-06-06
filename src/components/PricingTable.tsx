@@ -95,7 +95,7 @@ const PricingTable = () => {
                   </Button>
                 </div>
                 <div className="text-gray-600 mt-4">
-                  <strong>Contact:</strong> Ajit Rai | +91-7570000985 | hello@ayanaprop.com
+                  <strong>Contact:</strong> Ajit Rai | +91-7570000985 | hello@ayanaprop.tech
                 </div>
               </div>
             </CardContent>

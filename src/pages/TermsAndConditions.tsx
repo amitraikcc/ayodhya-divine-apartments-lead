@@ -185,7 +185,7 @@ const TermsAndConditions = () => {
                   
                   <div className="space-y-2 text-gray-700">
                     <p><strong>Company:</strong> Ayana Proptech LLP</p>
-                    <p><strong>Email:</strong> hello@ayanaprop.com</p>
+                    <p><strong>Email:</strong> hello@ayanaprop.tech</p>
                     <p><strong>Phone:</strong> +91-7570000985</p>
                     <p><strong>Address:</strong> 97, Kahlon Garden City, Sec 12, Vrindavan Yojna, Lucknow - 226025, UP, India</p>
                   </div>

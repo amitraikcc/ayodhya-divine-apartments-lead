@@ -23,7 +23,7 @@ const Footer = () => {
               <p>97, Kahlon Garden City, Sec 12, Vrindavan Yojna</p>
               <p>Lucknow - 226025, UP, India</p>
               <p>📞 Mobile & WhatsApp: +91 7570000985</p>
-              <p>📧 Email: hello@ayanaprop.com</p>
+              <p>📧 Email: hello@ayanaprop.tech</p>
             </div>
             <p className="text-golden-300 font-semibold">🙏 Jai Shree Ram! 🙏</p>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300 mb-6">
               <p><strong>Contact Person:</strong> Ajit Rai</p>
               <p><strong>Phone:</strong> +91-7570000985</p>
-              <p><strong>Email:</strong> hello@ayanaprop.com</p>
+              <p><strong>Email:</strong> hello@ayanaprop.tech</p>
               <p><strong>Location:</strong> Surajkund Area, Ayodhya</p>
             </div>
             
