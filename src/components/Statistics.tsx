@@ -1,4 +1,3 @@
-
 const Statistics = () => {
   const stats = [
     {
@@ -30,14 +29,14 @@ const Statistics = () => {
       emoji: "🏘️"
     },
     {
-      number: "4X-10X",
+      number: "2X-5X",
       label: "Growth from 2021-24",
       color: "text-orange-600",
       bgColor: "bg-orange-100",
       emoji: "📈"
     },
     {
-      number: "12X-20X",
+      number: "5X-10X",
       label: "Expected Growth 2025-35",
       color: "text-pink-600",
       bgColor: "bg-pink-100",
