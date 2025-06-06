@@ -87,6 +87,14 @@ const Footer = () => {
                   Contact Us
                 </button>
               </li>
+              <li>
+                <Link 
+                  to="/blog" 
+                  className="hover:text-golden-300 transition-colors cursor-pointer block"
+                >
+                  📰 Blog & News
+                </Link>
+              </li>
             </ul>
           </div>
           

@@ -11,6 +11,7 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import PopupContact from "@/components/PopupContact";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import BlogNavButton from "@/components/BlogNavButton";
 import CookieConsent from "@/components/CookieConsent";
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
       <Footer />
       <PopupContact />
       <WhatsAppButton />
+      <BlogNavButton />
       <CookieConsent />
     </div>
   );
