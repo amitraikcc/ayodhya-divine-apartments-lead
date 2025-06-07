@@ -8,28 +8,52 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ayanaprop.tech/#features</loc>
+    <loc>https://ayanaprop.tech/about/</loc>
     <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ayanaprop.tech/#location</loc>
+    <loc>https://ayanaprop.tech/contact/</loc>
     <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ayanaprop.tech/#pricing</loc>
+    <loc>https://ayanaprop.tech/downloads/</loc>
     <lastmod>2025-01-09</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ayanaprop.tech/blog/</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ayanaprop.tech/#contact</loc>
-    <lastmod>2025-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://ayanaprop.tech/blog/ayodhya-investment-guide/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ayanaprop.tech/blog/nri-investment-ayodhya/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ayanaprop.tech/blog/government-development-ayodhya/</loc>
+    <lastmod>2025-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ayanaprop.tech/blog/ayodhya-studio-apartment-features/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ayanaprop.tech/privacy-policy</loc>

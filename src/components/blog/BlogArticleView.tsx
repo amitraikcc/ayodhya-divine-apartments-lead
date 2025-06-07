@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Calendar, Tag, User, Clock, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -20,6 +19,8 @@ interface BlogArticleViewProps {
 }
 
 const BlogArticleView: React.FC<BlogArticleViewProps> = ({ post, onBackToList }) => {
+  const navigate = useNavigate();
+
   const getCategoryColor = (category: string) => {
     const colors = {
       "Real Estate": "bg-blue-100 text-blue-800 border-blue-200",
@@ -29,6 +30,10 @@ const BlogArticleView: React.FC<BlogArticleViewProps> = ({ post, onBackToList })
       "Ayodhya News": "bg-pink-100 text-pink-800 border-pink-200"
     };
     return colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800 border-gray-200";
+  };
+
+  const handleBackToList = () => {
+    navigate('/blog');
   };
 
   return (
@@ -45,7 +50,7 @@ const BlogArticleView: React.FC<BlogArticleViewProps> = ({ post, onBackToList })
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <button onClick={onBackToList}>Blog & News</button>
+                <Link to="/blog">Blog & News</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -121,7 +126,7 @@ const BlogArticleView: React.FC<BlogArticleViewProps> = ({ post, onBackToList })
             <div className="p-8 bg-gradient-to-r from-golden-50 to-orange-50 border-t border-gray-200">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <button
-                  onClick={onBackToList}
+                  onClick={handleBackToList}
                   className="inline-flex items-center gap-2 text-golden-600 hover:text-golden-700 font-semibold transition-colors duration-300 group"
                 >
                   <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-300" />
